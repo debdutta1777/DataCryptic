@@ -75,19 +75,19 @@ Follow these steps to run DataCrypt locally on your machine.
    ```bash
     git clone [https://github.com/cxgx4/DataCryptic.git](https://github.com/cxgx4/DataCryptic.git)
     cd failvault
-    ```
+```
 
 2.  **Install Dependencies**
     ```bash
     npm install
     # or
     yarn install
-    ```
+```
 
 3.  **Run the Development Server**
     ```bash
     npm run dev
-    ```
+```
 
 4.  **Launch**
     Open [http://localhost:3000](http://localhost:3000) in your browser.
