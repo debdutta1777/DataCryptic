@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+# DataCrypt: Turning Failure into IP<div align="center">
 
-```bash
+  <img src="public/logo.png" alt="FailVault Logo" width="120" />
+
+  <br />
+
+  <h3>The Decentralized Archive for Negative Scientific Results</h3>
+
+  
+
+  <p>    <a href="https://failvault-demo.vercel.app">View Demo</a> •
+
+    <a href="https://youtu.be/demo-video-link">Watch Video</a> •
+
+    <a href="#-getting-started">Documentation</a>
+
+  </p>
+
+</div>
+
+---## The Problem**Science has a "Positive Publication Bias."**
+
+Researchers spend months conducting experiments that fail or yield negative results. Because journals rarely publish these findings, this data rots in drawers.* **Wasted Time:** Other scientists unknowingly repeat the same failed experiments.* **Wasted Resources:** Billions of dollars in grant money are burned on redundant research.* **Zero ROI:** Researchers get no credit or compensation for negative results.## 💡 The Solution: FailVault
+
+FailVault is a **Decentralized Science (DeSci)** marketplace that allows researchers to mint their failed experiments as **IP-NFTs**.* **🛡️ Encrypted IP:** Sensitive data (raw datasets, logs) is encrypted and stored on IPFS/Arweave, accessible only to those who purchase an unlock.* **⛓️ Immutable Proof:** We mint a proof-of-existence NFT on the **Polygon Amoy Network**, timestamping the discovery.* **💰 Monetization:** Researchers earn ETH/POL whenever another scientist unlocks their data to save time.## ⚡ Tech Stack
+
+
+
+| Component | Technology | Description |
+
+| :--- | :--- | :--- |
+
+| **Frontend** | Next.js 14, Tailwind CSS | Responsive, glassmorphism UI with Lucide React icons. |
+
+| **Blockchain** | Polygon Amoy Testnet | Low-cost, fast transactions for minting IP-NFTs. |
+
+| **Smart Contracts** | Solidity, Hardhat | Handles minting, ownership, and unlock logic. |
+
+| **Storage** | IPFS / Supabase | Hybrid storage for public metadata and encrypted private data. |
+
+| **Auth** | Ethers.js / MetaMask | Web3 wallet connection and transaction signing. |## 📸 Screenshots
+
+
+
+| Landing Page | Publishing Portal |
+
+|:---:|:---:|
+
+| ![Landing](public/screenshots/landing.png) | ![Publish](public/screenshots/publish.png) | ![Admin](public/screenshots/) | ## 🛠️ Getting Started### Prerequisites* Node.js (v18+)* MetaMask Wallet (connected to Polygon Amoy)### Installation1. **Clone the repo**
+
+   ```bash
+
+   git clone [https://github.com/cxgx4/DataCryptic.git](https://github.com/cxgx4/DataCryptic.git)
+
+   cd failvault
+
+Install dependencies
+
+Bash
+
+
+
+npm install# or
+
+yarn install
+
+Set up Environment Variables
+
+Create a .env.local file in the root directory:
+
+Bash
+
+
+
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
+
+Run the Development Server
+
+Bash
+
+
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the App
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Visit http://localhost:3000 in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+⛓️ Smart Contract Info
 
-## Learn More
+Network: Polygon Amoy Testnet
 
-To learn more about Next.js, take a look at the following resources:
+Contract Address: 0x2A5799Cc7E9708b39D14014C143451ABf4938fBd
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Explorer: View on Amoy PolygonScan
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🤝 Contributing
 
-## Deploy on Vercel
+Built for the [CodeQuest] 2025.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Team: [Cherry Ghosh] & [Debdutta Ghosh] & [Debasmita Chatterjee]
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📄 License
+
+Distributed under the MIT License. See LICENSE for more information.

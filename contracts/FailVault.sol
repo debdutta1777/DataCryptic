@@ -19,7 +19,7 @@ contract FailVault is ERC721URIStorage, Ownable, AccessControl {
         string litReview;
         string findings;
         bool isSold;
-        bool isActive; // New: Allows devs to hide items
+        bool isActive; // Allows devs to hide items
     }
 
     Item[] public items;
@@ -53,17 +53,29 @@ contract FailVault is ERC721URIStorage, Ownable, AccessControl {
         return tokenId;
     }
 
-    // 2. Standard Buy Function
+    // 2. Standard Buy Function (UPDATED)
     function buyExperiment(uint256 itemId) public payable {
         Item storage item = items[itemId];
-        require(item.isActive, "Item has been delisted by developers");
-        require(msg.value >= item.price, "Not enough money");
+        require(item.isActive, "Item has been delisted");
         require(!item.isSold, "Already sold");
-        
-        payable(item.seller).transfer(msg.value);
+        require(msg.value >= item.price, "Not enough money");
+
+        // Effects: Update state BEFORE external calls to prevent re-entrancy
+        item.isSold = true;
+
+        // Refund overpayment (Using .call instead of .transfer for Smart Wallet support)
+        if (msg.value > item.price) {
+            (bool refundSuccess, ) = payable(msg.sender).call{value: msg.value - item.price}("");
+            require(refundSuccess, "Refund failed");
+        }
+
+        // Interactions: Pay the seller
+        (bool success, ) = payable(item.seller).call{value: item.price}("");
+        require(success, "Transfer to seller failed");
+
+        // Transfer the NFT ownership
         _transfer(item.seller, msg.sender, item.id);
         
-        item.isSold = true;
         emit ItemSold(itemId, msg.sender, item.price);
     }
 
